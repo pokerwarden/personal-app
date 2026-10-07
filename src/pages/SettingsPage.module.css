@@ -1,3 +1,4 @@
+/* restyled: Radix Themes RTL — tokens from index.css */
 /* src/pages/SettingsPage.module.css */
 
 .page {
@@ -19,9 +20,8 @@
 .section { margin-bottom: 24px; }
 .sectionLabel {
   font-family: var(--font-mono);
-  font-size: 11px;
-  text-transform: uppercase;
-  letter-spacing: 0.14em;
+  font-size: 12px;
+  letter-spacing: 0;
   color: var(--ink-3);
   font-weight: 500;
   padding: 0 4px 8px;
@@ -120,7 +120,7 @@ button.row:hover { background: var(--surface-2); }
   outline: none;
   transition: border-color 0.15s, box-shadow 0.15s;
 }
-.input:focus { border-color: var(--tangerine); box-shadow: 0 0 0 3px var(--tangerine-soft); }
+.input:focus { border-color: var(--tangerine); box-shadow: 0 0 0 2px var(--focus); }
 .input::placeholder { color: var(--ink-4); }
 
 .saveBtn {

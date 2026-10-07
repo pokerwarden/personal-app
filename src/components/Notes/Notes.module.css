@@ -1,3 +1,4 @@
+/* restyled: Radix Themes RTL — tokens from index.css */
 /* ─── Notes list ─── */
 .notesList { display: flex; flex-direction: column; gap: 8px; overflow-y: auto; flex: 1; }
 
@@ -75,7 +76,7 @@
   border: 1px solid var(--hair);
   background: var(--surface-2);
   color: var(--ink-2);
-  font-size: 11px;
+  font-size: 12px;
   cursor: pointer;
   transition: background 0.15s, color 0.15s, border-color 0.15s;
 }
@@ -189,7 +190,7 @@
 .noteTitle {
   flex: 1; min-width: 0;
   font-family: var(--font-mono);
-  font-size: 11.5px; font-weight: 700;
+  font-size: 12px; font-weight: 700;
   color: rgba(0,0,0,0.72);
   cursor: pointer;
   overflow: hidden;
@@ -258,9 +259,8 @@
 .modalHeader { display: flex; align-items: center; justify-content: space-between; }
 .modalTitle {
   font-family: var(--font-mono);
-  font-size: 11px;
-  text-transform: uppercase;
-  letter-spacing: 0.14em;
+  font-size: 12px;
+  letter-spacing: 0;
   color: var(--ink-3);
   font-weight: 500;
 }
@@ -304,9 +304,8 @@
 .modalField { display: flex; flex-direction: column; gap: 6px; }
 .modalFieldLabel {
   font-family: var(--font-mono);
-  font-size: 10.5px;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
+  font-size: 12px;
+  letter-spacing: 0;
   color: var(--ink-3);
   font-weight: 500;
 }

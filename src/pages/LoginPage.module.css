@@ -1,3 +1,4 @@
+/* restyled: Radix Themes RTL — tokens from index.css */
 /* src/pages/LoginPage.module.css */
 
 .page {
@@ -19,9 +20,7 @@
   position: absolute;
   inset-block: 0;
   inset-inline: 0 50%;
-  background-image:
-    radial-gradient(ellipse 800px 500px at 110% -10%, var(--tangerine-soft), transparent 60%),
-    radial-gradient(ellipse 600px 400px at -10% 110%, var(--lavender-soft), transparent 60%);
+  background: var(--surface-2);
   opacity: 0.6;
   pointer-events: none;
 }
@@ -63,7 +62,7 @@
   color: var(--ink-2);
   font-size: 12px;
   font-family: var(--font-mono);
-  letter-spacing: 0.04em;
+  letter-spacing: 0;
   cursor: pointer;
   transition: color 0.15s, border-color 0.15s;
 }
@@ -85,7 +84,7 @@
   content: '';
   position: absolute;
   inset: 0;
-  background-image: radial-gradient(ellipse 700px 600px at 75% 20%, var(--tangerine) 0%, transparent 60%);
+  background: var(--surface-2);
   opacity: 0.22;
 }
 
@@ -132,8 +131,8 @@
   background: oklch(30% 0.01 70 / 60%);
   border: 1px solid oklch(50% 0.01 70 / 40%);
   font-family: var(--font-mono);
-  font-size: 11.5px;
-  letter-spacing: 0.04em;
+  font-size: 12px;
+  letter-spacing: 0;
 }
 .sideDot { width: 7px; height: 7px; border-radius: 50%; background: var(--tangerine); flex-shrink: 0; }
 
@@ -213,9 +212,8 @@
 .fieldRow { display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 6px; }
 .label {
   font-family: var(--font-mono);
-  font-size: 10.5px;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
+  font-size: 12px;
+  letter-spacing: 0;
   color: var(--ink-3);
   font-weight: 500;
 }
@@ -239,7 +237,7 @@
   padding: 0 12px;
   transition: border-color 0.15s, box-shadow 0.15s;
 }
-.inputWrap:focus-within { border-color: var(--tangerine); box-shadow: 0 0 0 3px var(--tangerine-soft); }
+.inputWrap:focus-within { border-color: var(--tangerine); box-shadow: 0 0 0 2px var(--focus); }
 .inputWrap svg { color: var(--tangerine); flex-shrink: 0; }
 .input {
   flex: 1;
@@ -313,9 +311,8 @@
   margin: 18px 0 14px;
   color: var(--ink-4);
   font-family: var(--font-mono);
-  font-size: 11px;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
+  font-size: 12px;
+  letter-spacing: 0;
 }
 .divider::before,
 .divider::after {

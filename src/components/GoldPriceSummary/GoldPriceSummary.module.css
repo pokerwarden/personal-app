@@ -1,6 +1,5 @@
 .updatedAt {
-  font-family: var(--font-mono);
-  font-size: 10px;
+  font-size: 12px;
   color: var(--ink-4);
 }
 
@@ -25,22 +24,22 @@
   padding: 4px 20px;
   flex: 1 1 100px;
   min-width: 100px;
-  border-left: 1px dashed var(--hair-2);
+  border-left: 1px solid var(--hair);
 }
 .tile:first-child { border-left: none; padding-left: 4px; }
-[dir="rtl"] .tile { border-left: none; border-right: 1px dashed var(--hair-2); }
+[dir="rtl"] .tile { border-left: none; border-right: 1px solid var(--hair); }
 [dir="rtl"] .tile:first-child { border-right: none; padding-right: 4px; }
 
 .karat {
   font-family: var(--font-mono);
-  font-size: 10.5px; font-weight: 700;
-  letter-spacing: 0.08em;
-  color: var(--ink-4);
+  font-size: 12px; font-weight: 500;
+  color: var(--ink-3);
 }
 
 .price {
   font-family: var(--font-display);
-  font-size: 20px;
+  font-size: 22px;
+  font-weight: 300;
   letter-spacing: -0.01em;
   color: var(--ink);
 }
@@ -51,22 +50,23 @@
   gap: 3px;
   align-self: flex-start;
   font-family: var(--font-mono);
-  font-size: 10.5px;
-  padding: 2px 7px;
-  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 500;
+  padding: 1px 6px;
+  border-radius: 4px;
   white-space: nowrap;
 }
 .flat { background: var(--surface-2); color: var(--ink-4); }
-.up   { background: var(--sage-soft); color: oklch(45% 0.14 150); }
-.down { background: var(--coral-soft); color: oklch(45% 0.14 28); }
-[data-mode="dark"] .up   { color: var(--sage); }
-[data-mode="dark"] .down { color: var(--coral); }
+.up   { background: #e6f6eb; color: #218358; }
+.down { background: #feebec; color: #ce2c31; }
+[data-mode="dark"] .up   { background: #132d21; color: #3dd68c; }
+[data-mode="dark"] .down { background: #3b1219; color: #ff9592; }
 
 /* ─── Calculator ─── */
 .calcBox {
   margin-top: 16px;
-  padding: 14px 16px;
-  background: linear-gradient(135deg, var(--sun-soft), var(--surface-2));
+  padding: 16px;
+  background: var(--bg);
   border: 1px solid var(--hair);
   border-radius: var(--radius);
 }
@@ -76,9 +76,8 @@
   align-items: center;
   gap: 5px;
   font-family: var(--font-mono);
-  font-size: 10px; font-weight: 600;
-  text-transform: uppercase; letter-spacing: 0.08em;
-  color: var(--ink-3);
+  font-size: 13px; font-weight: 600;
+  color: var(--ink);
   margin-bottom: 12px;
 }
 
@@ -97,22 +96,22 @@
 
 .calcFieldLabel {
   font-family: var(--font-mono);
-  font-size: 9.5px; font-weight: 600;
-  text-transform: uppercase; letter-spacing: 0.06em;
-  color: var(--ink-4);
+  font-size: 12px; font-weight: 500;
+  color: var(--ink-3);
 }
 
 .calcInputWrap {
   display: flex;
   align-items: center;
   gap: 6px;
-  padding: 7px 10px;
-  border-radius: 10px;
+  height: 32px;
+  padding: 0 10px;
+  border-radius: var(--radius-sm);
   border: 1px solid var(--hair);
   background: var(--surface);
   transition: border-color 0.15s;
 }
-.calcInputWrap:focus-within { border-color: var(--sun); }
+.calcInputWrap:focus-within { border-color: var(--focus); box-shadow: 0 0 0 1px var(--focus); }
 .calcInputIcon { color: var(--ink-4); flex-shrink: 0; }
 
 .calcInput {
@@ -122,31 +121,33 @@
   background: transparent;
   color: var(--ink);
   font-family: var(--font-mono);
-  font-size: 15px;
+  font-size: 14px;
 }
 .calcInput::-webkit-inner-spin-button,
 .calcInput::-webkit-outer-spin-button { -webkit-appearance: none; }
-.calcInputUnit { font-family: var(--font-mono); font-size: 11px; color: var(--ink-4); }
+.calcInputUnit { font-size: 12px; color: var(--ink-4); }
 
 .calcSelect {
-  padding: 8px 10px;
-  border-radius: 10px;
+  height: 32px;
+  padding: 0 10px;
+  border-radius: var(--radius-sm);
   border: 1px solid var(--hair);
   background: var(--surface);
   color: var(--ink);
   font-family: var(--font-mono);
-  font-size: 14px; font-weight: 600;
+  font-size: 14px; font-weight: 500;
   outline: none;
   cursor: pointer;
   transition: border-color 0.15s;
 }
-.calcSelect:focus { border-color: var(--sun); }
+.calcSelect:focus { border-color: var(--focus); box-shadow: 0 0 0 1px var(--focus); }
 
 .calcEquals {
   font-family: var(--font-display);
-  font-size: 20px;
+  font-size: 18px;
+  font-weight: 300;
   color: var(--ink-4);
-  padding-bottom: 8px;
+  padding-bottom: 6px;
 }
 
 .calcResult {
@@ -161,6 +162,7 @@
 .calcResultNum {
   font-family: var(--font-display);
   font-size: 26px;
+  font-weight: 300;
   color: var(--ink);
   line-height: 1;
   white-space: nowrap;
@@ -175,8 +177,7 @@
 [dir="rtl"] .calcResultCcy { margin-right: 0; margin-left: 2px; }
 
 .calcHint {
-  font-family: var(--font-mono);
-  font-size: 10px;
+  font-size: 12px;
   color: var(--ink-4);
   white-space: nowrap;
 }

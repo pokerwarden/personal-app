@@ -1,3 +1,4 @@
+/* restyled: Radix Themes RTL — tokens from index.css */
 /* ─── Sidebar container ─── */
 .sidebar {
   width: 280px;
@@ -99,7 +100,7 @@
 .sidebarSearch input::placeholder { color: var(--ink-4); }
 .sidebarKbd {
   font-family: var(--font-mono);
-  font-size: 10px;
+  font-size: 12px;
   padding: 1px 5px;
   border-radius: 4px;
   background: var(--surface);
@@ -136,16 +137,15 @@
 }
 .groupName {
   font-family: var(--font-mono);
-  font-size: 10.5px;
-  text-transform: uppercase;
-  letter-spacing: 0.14em;
+  font-size: 12px;
+  letter-spacing: 0;
   color: var(--ink-3);
   font-weight: 500;
   flex: 1;
 }
 .groupCount {
   font-family: var(--font-mono);
-  font-size: 10px;
+  font-size: 12px;
   color: var(--ink-4);
 }
 .groupChevron {
@@ -159,9 +159,8 @@
 .hiddenGroup { opacity: 0.45; }
 .hiddenBadge {
   font-family: var(--font-mono);
-  font-size: 9px;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
+  font-size: 12px;
+  letter-spacing: 0;
   padding: 1px 6px;
   border-radius: 999px;
   background: var(--surface-2);
@@ -258,7 +257,7 @@
   border: none;
   border-radius: 8px;
   cursor: pointer;
-  letter-spacing: 0.04em;
+  letter-spacing: 0;
 }
 .addLinkBtn:hover, .addGroupBtn:hover { background: var(--surface-2); color: var(--ink-2); }
 .addGroupBtn { margin: 4px 12px; width: calc(100% - 24px); padding: 8px 12px; }
@@ -293,7 +292,7 @@
   width: 32px;
   height: 32px;
   border-radius: 50%;
-  background: linear-gradient(135deg, var(--coral), var(--lavender));
+  background: var(--surface-2);
   color: var(--surface);
   display: flex;
   align-items: center;
@@ -306,7 +305,7 @@
 .sidebarUserName { font-size: 12.5px; font-weight: 500; color: var(--ink); }
 .sidebarUserEmail {
   font-family: var(--font-mono);
-  font-size: 10px;
+  font-size: 12px;
   color: var(--ink-4);
   overflow: hidden;
   text-overflow: ellipsis;
@@ -340,9 +339,8 @@
 }
 .modalTitle {
   font-family: var(--font-mono);
-  font-size: 11px;
-  text-transform: uppercase;
-  letter-spacing: 0.14em;
+  font-size: 12px;
+  letter-spacing: 0;
   color: var(--ink-3);
   font-weight: 500;
 }
@@ -359,9 +357,8 @@
 .modalBody { display: flex; flex-direction: column; gap: 10px; }
 .label {
   font-family: var(--font-mono);
-  font-size: 10.5px;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
+  font-size: 12px;
+  letter-spacing: 0;
   color: var(--ink-3);
 }
 .input {
@@ -482,9 +479,8 @@
 .loading {
   padding: 16px;
   font-family: var(--font-mono);
-  font-size: 11px;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
+  font-size: 12px;
+  letter-spacing: 0;
   color: var(--ink-4);
   text-align: center;
 }

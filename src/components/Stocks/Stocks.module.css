@@ -1,3 +1,4 @@
+/* restyled: Radix Themes RTL — tokens from index.css */
 /* ─── Add row ─── */
 .addRow {
   display: flex;
@@ -15,7 +16,6 @@
   font-family: var(--font-mono);
   font-size: 12.5px;
   outline: none;
-  text-transform: uppercase;
 }
 .addInput:focus { border-color: var(--ink-4); }
 .addInput::placeholder { color: var(--ink-4); text-transform: none; }
@@ -34,15 +34,14 @@
 .rangeBtns { display: flex; gap: 4px; flex-shrink: 0; }
 .rangeBtn {
   font-family: var(--font-mono);
-  font-size: 10.5px;
+  font-size: 12px;
   padding: 4px 10px;
   border-radius: 999px;
   border: 1px solid var(--hair);
   background: var(--surface-2);
   color: var(--ink-3);
   cursor: pointer;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
+  letter-spacing: 0;
 }
 .activeRange { background: var(--surface); color: var(--ink); box-shadow: var(--shadow-sm); }
 
@@ -94,15 +93,15 @@
 }
 .cardMeta { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
 .cardTitleRow { display: flex; align-items: center; gap: 5px; flex-wrap: wrap; }
-.cardSymbol { font-family: var(--font-mono); font-size: 14px; font-weight: 700; letter-spacing: 0.04em; color: var(--ink); }
+.cardSymbol { font-family: var(--font-mono); font-size: 14px; font-weight: 700; letter-spacing: 0; color: var(--ink); }
 .exchange {
   font-family: var(--font-mono);
-  font-size: 9px; text-transform: uppercase; letter-spacing: 0.06em;
+  font-size: 12px; letter-spacing: 0;
   padding: 1px 5px; border-radius: 4px;
   background: var(--surface); color: var(--ink-4);
 }
-.cardName { font-size: 11.5px; color: var(--ink-2); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-.industry { font-size: 10px; color: var(--ink-4); font-family: var(--font-mono); text-transform: uppercase; letter-spacing: 0.05em; }
+.cardName { font-size: 12px; color: var(--ink-2); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.industry { font-size: 12px; color: var(--ink-4); font-family: var(--font-mono); letter-spacing: 0; }
 
 .cardActions { display: flex; gap: 2px; flex-shrink: 0; }
 
@@ -124,13 +123,13 @@
   align-items: center;
   gap: 3px;
   font-family: var(--font-mono);
-  font-size: 11px;
+  font-size: 12px;
   padding: 2px 8px;
   border-radius: 999px;
 }
 .changeAbs {
   font-family: var(--font-mono);
-  font-size: 11px;
+  font-size: 12px;
   color: var(--ink-3);
 }
 .up   { background: var(--sage-soft); color: oklch(45% 0.14 150); }
@@ -140,7 +139,7 @@
 
 /* Chart */
 .chartWrap { border-radius: 8px; overflow: hidden; }
-.chartUnavailable { font-family: var(--font-mono); font-size: 9px; color: var(--ink-4); }
+.chartUnavailable { font-family: var(--font-mono); font-size: 12px; color: var(--ink-4); }
 
 /* ─── Stats grid ─── */
 .statsGrid {
@@ -153,10 +152,10 @@
 .stat { display: flex; flex-direction: column; gap: 2px; }
 .statLabel {
   font-family: var(--font-mono);
-  font-size: 9px; text-transform: uppercase; letter-spacing: 0.07em;
+  font-size: 12px; letter-spacing: 0;
   color: var(--ink-4);
 }
-.statValue { font-family: var(--font-mono); font-size: 11.5px; font-weight: 600; color: var(--ink); }
+.statValue { font-family: var(--font-mono); font-size: 12px; font-weight: 600; color: var(--ink); }
 .statUp   { color: oklch(45% 0.14 150); }
 .statDown { color: oklch(45% 0.14 28); }
 [data-mode="dark"] .statUp   { color: var(--sage); }
@@ -184,7 +183,7 @@
   border-radius: var(--radius-sm);
   padding: 8px 12px;
   font-family: var(--font-mono);
-  font-size: 11px;
+  font-size: 12px;
 }
 .tooltipDate { color: var(--ink-3); display: block; margin-bottom: 4px; }
 .tooltipRow  { display: flex; gap: 8px; justify-content: space-between; color: var(--ink-2); }
