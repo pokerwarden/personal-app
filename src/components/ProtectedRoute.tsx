@@ -1,10 +1,9 @@
 // src/components/ProtectedRoute.tsx
-import { Navigate } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import { useAuth } from '../context/AuthContext'
 
 export default function ProtectedRoute({ children }: { children: React.ReactNode }) {
-  const { session, loading } = useAuth()
+  const { loading } = useAuth()
   const { t } = useTranslation()
 
   if (loading) {
@@ -18,8 +17,6 @@ export default function ProtectedRoute({ children }: { children: React.ReactNode
       </div>
     )
   }
-
-  if (!session) return <Navigate to="/login" replace />
 
   return <>{children}</>
 }
