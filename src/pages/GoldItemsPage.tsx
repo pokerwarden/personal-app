@@ -13,23 +13,19 @@ const fmt = (n: number) => n.toLocaleString('he-IL', { minimumFractionDigits: 2,
 
 // ─── Fetch live gold spot + USD/ILS rate ─────────────────────
 async function fetchLivePrices(): Promise<{ priceILS: number; change: number | null }> {
-  // Gold spot in USD/troy-oz from metals.live (free, no key)
-  const [metalsRes, boiRes] = await Promise.all([
-    fetch('https://api.metals.live/v1/spot/gold').then(r => r.json()),
-    fetch('https://boi.org.il/PublicApi/GetExchangeRates').then(r => r.json()),
+  // CoinCap: free, no key, CORS-enabled — gold price in USD/troy-oz
+  const [coincapRes, fxRes] = await Promise.all([
+    fetch('https://api.coincap.io/v2/rates/gold').then(r => r.json()),
+    fetch('https://open.er-api.com/v6/latest/USD').then(r => r.json()),
   ])
 
-  const spotUSD: number = metalsRes[0]?.price ?? metalsRes?.price ?? metalsRes
-  const usdRate = boiRes.exchangeRates?.find((r: { key: string }) => r.key === 'USD')
-  const ilsPerUSD: number = usdRate?.currentExchangeRate ?? 3.72
+  const spotUSD: number = parseFloat(coincapRes?.data?.rateUsd ?? '3000')
+  const ilsPerUSD: number = fxRes?.rates?.ILS ?? 3.72
 
-  // troy oz → gram
+  // troy oz → gram → ILS
   const pricePerGram24KILS = (spotUSD / 31.1035) * ilsPerUSD
 
-  const changeUSD: number | null = usdRate?.currentChange ?? null
-  const changePct = changeUSD !== null ? (changeUSD / ilsPerUSD) * 100 : null
-
-  return { priceILS: pricePerGram24KILS, change: changePct }
+  return { priceILS: pricePerGram24KILS, change: null }
 }
 
 // ─── Gold Price Panel ─────────────────────────────────────────
