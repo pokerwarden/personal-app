@@ -253,7 +253,7 @@ function GoldDeals({ prices }: { prices: KaratPrice[] }) {
 
 // ─── Page ─────────────────────────────────────────────────────
 export default function GoldItemsPage() {
-  const [prices, setPrices] = useState<KaratPrice[]>([])
+  const [prices] = useState<KaratPrice[]>([])
 
   return (
     <div className={styles.content}>
