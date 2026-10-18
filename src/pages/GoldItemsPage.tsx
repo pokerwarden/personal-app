@@ -13,13 +13,13 @@ const fmt = (n: number) => n.toLocaleString('he-IL', { minimumFractionDigits: 2,
 
 // ─── Fetch live gold spot + USD/ILS rate ─────────────────────
 async function fetchLivePrices(): Promise<{ priceILS: number; change: number | null }> {
-  // CoinCap: free, no key, CORS-enabled — gold price in USD/troy-oz
-  const [coincapRes, fxRes] = await Promise.all([
-    fetch('https://api.coincap.io/v2/rates/gold').then(r => r.json()),
+  // CoinGecko: free, no key, CORS-enabled — PAXG = 1 troy oz of gold, tracks spot price
+  const [cgRes, fxRes] = await Promise.all([
+    fetch('https://api.coingecko.com/api/v3/simple/price?ids=pax-gold&vs_currencies=usd').then(r => r.json()),
     fetch('https://open.er-api.com/v6/latest/USD').then(r => r.json()),
   ])
 
-  const spotUSD: number = parseFloat(coincapRes?.data?.rateUsd ?? '3000')
+  const spotUSD: number = cgRes?.['pax-gold']?.usd ?? 3000
   const ilsPerUSD: number = fxRes?.rates?.ILS ?? 3.72
 
   // troy oz → gram → ILS
